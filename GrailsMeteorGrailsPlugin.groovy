@@ -1,4 +1,4 @@
-class GrailsMeteorPluginGrailsPlugin {
+class GrailsMeteorGrailsPlugin {
   // the plugin version
   def version = "0.1"
   // the version or versions of Grails the plugin is designed for
@@ -9,7 +9,7 @@ class GrailsMeteorPluginGrailsPlugin {
   ]
 
   // TODO Fill in these fields
-  def title = "Grails Meteor Plugin" // Headline display name of the plugin
+  def title = "Grails Meteor Plugin Plugin" // Headline display name of the plugin
   def author = "Your name"
   def authorEmail = ""
   def description = '''\
@@ -17,7 +17,7 @@ Brief summary/description of the plugin.
 '''
 
   // URL to the plugin's documentation
-  def documentation = "http://grails.org/plugin/grails-meteor"
+  def documentation = "http://grails.org/plugin/grails-meteor-plugin"
 
   // Extra (optional) plugin metadata
 
