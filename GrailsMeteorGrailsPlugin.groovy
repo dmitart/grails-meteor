@@ -1,6 +1,9 @@
+import org.codehaus.groovy.grails.orm.hibernate.HibernateEventListeners
+import org.grailsmeteor.AuditEventListener
+
 class GrailsMeteorGrailsPlugin {
   // the plugin version
-  def version = "0.1"
+  def version = "0.0.1.2"
   // the version or versions of Grails the plugin is designed for
   def grailsVersion = "2.4 > *"
   // resources that are excluded from plugin packaging
@@ -8,8 +11,13 @@ class GrailsMeteorGrailsPlugin {
       "grails-app/views/error.gsp"
   ]
 
+  def dependsOn = [tomcat8: "8.0.1.1",
+                   'asset-pipeline': "1.6.1",
+                   hibernate: "3.6.10.8",
+                   'spring-websocket': "1.0.0.M1"]
+
   // TODO Fill in these fields
-  def title = "Grails Meteor Plugin Plugin" // Headline display name of the plugin
+  def title = "Grails Meteor Plugin" // Headline display name of the plugin
   def author = "Your name"
   def authorEmail = ""
   def description = '''\
@@ -41,7 +49,14 @@ Brief summary/description of the plugin.
   }
 
   def doWithSpring = {
-    // TODO Implement runtime spring config (optional)
+    auditListener(AuditEventListener) {
+    }
+
+    hibernateEventListeners(HibernateEventListeners) {
+      listenerMap = ['post-commit-insert': auditListener,
+                     'post-commit-update': auditListener,
+                     'post-commit-delete': auditListener]
+    }
   }
 
   def doWithDynamicMethods = { ctx ->

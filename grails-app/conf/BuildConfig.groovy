@@ -44,9 +44,9 @@ grails.project.dependency.resolution = {
             ":rest-client-builder:1.0.3") {
           export = false
       }
-      build ":tomcat8:8.0.1.1"
+      runtime ":tomcat8:8.0.1.1"
       compile ":asset-pipeline:1.6.1"
-      runtime ":hibernate:3.6.10.8"
+      compile ":hibernate:3.6.10.8"
       compile ":spring-websocket:1.0.0.M1"
     }
 }
