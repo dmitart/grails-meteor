@@ -13,6 +13,7 @@ Plugin relies on [websockets plugin](https://github.com/zyro23/grails-spring-web
 This plugin is not part of any repo, so to use it, you must checkout and build it manually.
 ```
 git clone https://github.com/dmitart/grails-meteor.git grails-meteor
+cd grails-meteor
 grails maven-install
 ```
 
@@ -38,9 +39,9 @@ Add grails-meteor
 runtime ":grails-meteor:0.0.1.2"
 ```
 
-## Resource
+## Domain resource
 
-Create new resource and map it to uri with same name, for example:
+Create new domain class with resource annotation and map it to uri with same name, for example:
 ```
 package test
 
